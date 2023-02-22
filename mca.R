@@ -5,7 +5,7 @@ library(naniar)
 #library(poLCA)
 library("FactoMineR")
 library("factoextra")
-dataset = read.spss("/home/elina/Documents/thesis/2013Namibia/data/NBH2013_public_use_SPSS/NBH2013_Public_Use.sav",to.data.frame = TRUE,stringsAsFactors = FALSE)
+dataset = read.spss("dateframe/NBH2013_Public_Use.sav",to.data.frame = TRUE,stringsAsFactors = FALSE)
 dataset = dataset[,!sapply(dataset, function(x) mean(is.na(x)))>0.99]
 dataset = subset(dataset,select = -c(stratum,psu))
 summary(dataset)
